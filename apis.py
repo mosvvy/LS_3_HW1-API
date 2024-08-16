@@ -1,5 +1,8 @@
+import json
+import random
+
 from flask_restful import Resource
-from flask import request
+from flask import request, jsonify
 
 
 class Question(Resource):
@@ -8,14 +11,11 @@ class Question(Resource):
         Returns random question
         :return:
         """
-        return {'id': 0,
-                'question': 'Test question',
-                'a1': 'r',
-                'a2': 'r',
-                'a3': 'r',
-                'a4': 'r',
-                'answer': '1'
-                }
+        with open('data/questions.json', 'r') as file:
+            questions = json.load(file)
+        i = random.randint(0, len(questions)-1)
+        res = questions[i]
+        return res
 
 
 class QuestionAnswer(Resource):
