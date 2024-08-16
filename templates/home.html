@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Question</h2>
+<form method="get" action="http://127.0.0.1:5000/question">
+    <button type="submit">New question</button>
+</form>
+<form method="get" action="http://127.0.0.1:5000/answer">
+    <input name="q" type="text" placeholder="question id">
+    <input name="a" type="text" placeholder="answer">
+    <button type="submit">Answer</button>
+</form>
+<hr>
+{{content}}
+</body>
+</html>
