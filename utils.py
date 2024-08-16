@@ -13,3 +13,4 @@ def get_question_by_id(q):
         for question in questions:
             if question.get('id') == q:
                 return question
+    return {'answer': '-1'}
